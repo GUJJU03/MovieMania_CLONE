@@ -5,7 +5,7 @@ import MovieCard from "./Moviecard";
 import SearchIcon from "./search.svg";
 // api key :  28f04b41
 
-const API_URL = "http://www.omdbapi.com?apikey=28f04b41";
+const API_URL = "https://www.omdbapi.com?apikey=28f04b41";
 const movie1 = {
   Title: "The Amazing Spiderman 2 Webb Cut",
   Year: "2021",
@@ -29,7 +29,7 @@ const App = () => {
   };
 
   useEffect(() => {
-    SearchMovie({ setsearchTerm });
+    SearchMovie('thor');
   }, []);
 
   return (
@@ -39,14 +39,14 @@ const App = () => {
 
         <div className="search">
           <input
-            placeholder="search any movie"
+            placeholder="Search Any Bollywood or Hollywood Movie"
             value={searchTerm}
             onChange={(e) => setsearchTerm(e.target.value)}
           />
           <img
             src={SearchIcon}
             alt="search"
-            onClick={() => SearchMovie(searchTerm)}
+            onClick={(movies) => SearchMovie(searchTerm)}
           />
         </div>
 
